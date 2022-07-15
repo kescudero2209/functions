@@ -22,3 +22,38 @@ if (document.getElementById("ele1") !== null) {
         paint(ele,color)
     })
     }
+
+    //Part 4
+
+let colorGlobal = "";
+
+document.addEventListener("keydown", (e) => { 
+  switch (event.key) {
+    case "a":
+      colorGlobal = "red";
+      console.log(colorGlobal);
+      break;
+    case "s":
+      colorGlobal = "green";
+      console.log(colorGlobal);
+      break;
+    case "d":
+      colorGlobal = "blue";
+      console.log(colorGlobal);
+      break;
+  }
+});
+
+function changeColor(element, color) {
+  element.style.backgroundColor = color;
+}
+
+document.querySelectorAll("div").forEach((element) => {
+  element.addEventListener("click", (e) => {
+    const id = e.target.getAttribute("id");
+    console.log(id);
+    changeColor(e.target, colorGlobal);
+    console.log(colorGlobal);
+  });
+});
+
